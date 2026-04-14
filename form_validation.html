@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sim-ple Validation</title>
+
+    <style>
+footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin-top: 200px;
+            // display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+  <nav>
+      <!-- <ul style="flex-direction: column; list-style: none; display: flex; flex-wrap: wrap;"> -->
+      <ul style="flex-direction: row; list-style: none; display: flex; flex-wrap: wrap;">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </nav>
+<!-- Returning false stops the form from submitting. -->
+<form onsubmit="return validate()">
+    Name: <input type="text" id="username" placeholder="Username"> <br/>
+    Password: <input type="password" id="pwd" placeholder="Password" style="margin-top: 50px;">
+    <button type="submit">Login</button>
+</form>
+
+<!-- FOOTER - at the bottom of body -->
+<footer>
+    <p>&copy; 2026 MyCompany. All Rights Reserved.</p>
+</footer>
+
+<!-- SCRIPT - after footer (best practice) -->
+<script>
+let myText = "Smooz Operator";
+// alert(myText);
+function validate() {
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('pwd').value;
+    
+    if (username === "") {
+        alert("Username is required");
+        return false;
+    }
+    
+    if (password === "") {
+        alert("Password is required");
+        return false;
+    }
+    
+    if (password.length < 4) {
+        alert("Password too short");
+        return false;
+    }
+    
+    return true; // Form is valid
+}
+</script>
+
+</body>
+
+
+
+</html>
